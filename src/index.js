@@ -1,15 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+// please get React from my installed modules and give me access in this file
+// this library knows how to recognize react components
+import React from "react";
+// reactDoM renders the components to the DOM
+import  ReactDOM from "react-dom";
 
-import App from './components/app';
-import reducers from './reducers';
+import SearchBar from "./components/search_bar";
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const API_KEY = "AIzaSyCkqutUf41s1uWzfv9IsGM72dZh62JV64Y";
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+const App = () => {
+    return (
+    <div>
+        <SearchBar />
+    </div>
+    );
+}
+
+ReactDOM.render(<App />, document.querySelector(".container"));
